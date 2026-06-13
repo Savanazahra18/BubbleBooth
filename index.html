@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bubble Booth</title>
+
+  <!-- Auth Guard -->
+  <script>
+    if (!localStorage.getItem('bubbleBoothUser')) {
+      window.location.href = 'login.html';
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Castoro&family=Outfit:wght@400;600;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="Assets/fish-photobooth/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="StyleSheets/home.css" />
+</head>
+
+<body>
+  <div class="logo">
+    <img src="Assets/fish-photobooth/logo-new.png" alt="Logo">
+  </div>
+
+  <!-- Main Container -->
+  <div class="home-container">
+    <div class="hero-text">
+      <h1>Bubble<br>Booth</h1>
+      <p>Capture your best underwater moments!</p>
+    </div>
+
+    <div class="photobooth-container">
+      <div class="photobooth-mock"></div>
+      <div class="photostrip-mock"></div>
+      <div class="bubbles-mock"></div>
+      <div class="fish-mock-1"></div>
+      <div class="fish-mock-2"></div>
+      <div class="fish-mock-3"></div>
+    </div>
+
+    <div class="button-container" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+      <button id="select-button">
+        Start Capturing
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </button>
+
+      <button id="logout-button"
+        style="background: rgba(255, 255, 255, 0.2); border: 2px solid var(--white); color: var(--white); font-family: 'Fredoka', sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 600; padding: 1rem 1.5rem; border-radius: 999px; cursor: pointer; backdrop-filter: blur(5px); transition: all 0.2s;">
+        Logout
+      </button>
+
+      <button onclick="window.location.href='admin.html'"
+        style="background: rgba(0, 0, 0, 0.2); border: 2px solid rgba(255, 255, 255, 0.5); color: var(--white); font-family: 'Fredoka', sans-serif; font-size: clamp(0.8rem, 1.5vw, 1rem); font-weight: 600; padding: 1rem 1.5rem; border-radius: 999px; cursor: pointer; backdrop-filter: blur(5px); transition: all 0.2s;">
+        Admin
+      </button>
+    </div>
+  </div>
+
+  <!-- Main JS -->
+  <script src="Javascripts/home.js"></script>
+</body>
+
+</html>

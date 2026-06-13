@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Bubble Booth</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="Assets/fish-photobooth/favicon.png" type="image/x-icon" />
+
+  <!-- Dedicated stylesheet for auth pages -->
+  <link rel="stylesheet" href="StyleSheets/auth.css" />
+</head>
+
+<body>
+  <!-- Decorative bubbles -->
+  <div class="decor-bubble db-1"></div>
+  <div class="decor-bubble db-2"></div>
+  <div class="decor-bubble db-3"></div>
+  <div class="decor-bubble db-4"></div>
+
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="Assets/fish-photobooth/logo-new.png" alt="Bubble Booth Logo">
+    </a>
+  </div>
+
+  <main class="auth-card">
+    <h1>Login</h1>
+    <p class="subtitle">Yuk masuk ke Bubble Booth!</p>
+
+    <form id="loginForm" class="auth-form">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Masukkan Email..." autocomplete="off">
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Masukkan Password...">
+      </div>
+
+      <span id="errorMsg" class="error-message"></span>
+
+      <button type="submit" class="auth-btn">Masuk</button>
+    </form>
+
+    <div class="auth-links">
+      Belum punya akun? <a href="register.html">Daftar di sini!</a>
+    </div>
+  </main>
+
+  <script type="module" src="Javascripts/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Bubble Booth</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="Assets/fish-photobooth/favicon.png" type="image/x-icon" />
+  
+  <!-- Dedicated stylesheet for auth pages -->
+  <link rel="stylesheet" href="StyleSheets/auth.css" />
+</head>
+<body>
+  <!-- Decorative bubbles -->
+  <div class="decor-bubble db-1"></div>
+  <div class="decor-bubble db-2"></div>
+  <div class="decor-bubble db-3"></div>
+  <div class="decor-bubble db-4"></div>
+
+  <div class="logo-container">
+    <a href="index.html">
+        <img src="Assets/fish-photobooth/logo-new.png" alt="Bubble Booth Logo">
+    </a>
+  </div>
+
+  <main class="auth-card">
+    <h1>Register</h1>
+    <p class="subtitle">Buat akun untuk berfoto seru!</p>
+
+    <form id="registerForm" class="auth-form">
+      <div class="input-group">
+        <label for="email">Email Baru</label>
+        <input type="email" id="email" placeholder="Buat alamat Email..." autocomplete="off">
+      </div>
+      
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Buat Password...">
+      </div>
+      
+      <div class="input-group">
+        <label for="confirmPassword">Konfirmasi Password</label>
+        <input type="password" id="confirmPassword" placeholder="Tulis ulang Password...">
+      </div>
+
+      <span id="errorMsg" class="error-message"></span>
+
+      <button type="submit" class="auth-btn">Mendaftar</button>
+    </form>
+
+    <div class="auth-links">
+      Sudah punya akun? <a href="login.html">Masuk di sini!</a>
+    </div>
+  </main>
+
+  <script type="module" src="Javascripts/auth.js"></script>
+</body>
+</html>

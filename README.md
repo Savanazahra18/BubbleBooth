@@ -1,1 +1,2 @@
-# BubbleBooth
+# Aplikasi_Photobooth
+Photobooth

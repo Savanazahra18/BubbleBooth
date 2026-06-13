@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Photobooth</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="Assets/fish-photobooth/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="StyleSheets/admin.css" />
+</head>
+<body>
+
+  <!-- ADMIN LOGIN SECTION -->
+  <div id="adminLoginSection" class="admin-container">
+    <div class="login-card">
+      <div class="logo">
+        <img src="Assets/fish-photobooth/logo-new.png" alt="Logo">
+      </div>
+      <h2>Admin Access</h2>
+      <p>Silakan masukkan password admin untuk melanjutkan.</p>
+      
+      <div class="form-group">
+        <input type="password" id="adminPassword" placeholder="Password" />
+      </div>
+      <p id="loginError" class="error-msg" style="display: none;">Password salah!</p>
+      
+      <div class="button-container">
+        <button id="loginBtn" class="primary-btn">Masuk</button>
+        <button id="backToHomeBtn" class="secondary-btn">Kembali ke Home</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN DASHBOARD SECTION (Hidden by default) -->
+  <div id="adminDashboardSection" class="admin-container" style="display: none;">
+    <div class="dashboard-header">
+      <div class="logo-small">
+        <img src="Assets/fish-photobooth/logo-new.png" alt="Logo">
+      </div>
+      <div class="header-text">
+        <h1>Admin Dashboard</h1>
+        <p>Kelola semua foto dari pengguna</p>
+      </div>
+      <button id="logoutBtn" class="danger-btn">Logout</button>
+    </div>
+
+    <div class="dashboard-nav">
+      <button id="tabUsersBtn" class="tab-btn active">Pengelolaan User</button>
+      <button id="tabPhotosBtn" class="tab-btn">Galeri Foto</button>
+      <button id="tabMessagesBtn" class="tab-btn">Pesan Masuk</button>
+    </div>
+
+    <!-- Users Content -->
+    <div class="dashboard-content" id="usersContent">
+      <div class="stats-bar">
+        <span>Total User: <strong id="totalUsers">0</strong></span>
+        <button id="refreshUsersBtn" class="secondary-btn">Refresh User</button>
+      </div>
+
+      <div id="loadingUsersIndicator" class="loading">Memuat daftar user...</div>
+
+      <div class="table-responsive">
+        <table class="admin-table" id="usersTable" style="display: none;">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Email User</th>
+              <th>Jumlah Foto</th>
+              <th>Jumlah Feedback</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="usersTableBody">
+            <!-- Data user akan dimuat di sini -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="dashboard-content" id="photosContent" style="display: none;">
+      <div class="stats-bar">
+        <span>Total Foto: <strong id="totalPhotos">0</strong></span>
+        <div class="filter-container" style="display: flex; gap: 10px; align-items: center;">
+          <input type="text" id="filterUserEmail" placeholder="Cari email user..." style="padding: 8px 12px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 8px; font-family: inherit; font-size: 0.9rem; background: rgba(255, 255, 255, 0.8); outline: none; transition: border-color 0.3s;" />
+          <button id="refreshBtn" class="secondary-btn" style="padding: 8px 16px;">Refresh Data</button>
+        </div>
+      </div>
+
+      <div id="loadingIndicator" class="loading">Memuat data...</div>
+      
+      <div class="admin-grid" id="adminGrid">
+        <!-- Foto akan dimuat di sini -->
+      </div>
+    </div>
+
+    <!-- Messages Content -->
+    <div class="dashboard-content" id="messagesContent" style="display: none;">
+      <div class="stats-bar">
+        <span>Total Pesan: <strong id="totalMessages">0</strong></span>
+        <div class="filter-container" style="display: flex; gap: 10px; align-items: center;">
+          <input type="text" id="filterMsgEmail" placeholder="Cari email user..." style="padding: 8px 12px; border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 8px; font-family: inherit; font-size: 0.9rem; background: rgba(255, 255, 255, 0.8); outline: none; transition: border-color 0.3s;" />
+          <button id="refreshMsgBtn" class="secondary-btn" style="padding: 8px 16px;">Refresh Pesan</button>
+        </div>
+      </div>
+      
+      <div id="loadingMsgIndicator" class="loading" style="display: none;">Memuat pesan...</div>
+
+      <div class="messages-list" id="messagesList">
+        <!-- Pesan akan dimuat di sini -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Supabase Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- Admin Logic -->
+  <script type="module" src="Javascripts/admin.js"></script>
+
+</body>
+</html>
